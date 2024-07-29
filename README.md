@@ -1,1 +1,1 @@
-*IWT-Project*
+IWT-Project
