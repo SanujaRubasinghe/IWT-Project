@@ -1,2 +1,2 @@
 # IWT-Project
-Edit login.php to add your credentials.
+Edit connect.php to add your credentials.
