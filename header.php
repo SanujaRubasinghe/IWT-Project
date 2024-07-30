@@ -3,7 +3,7 @@
         <div class="logo">MyLogo</div>
         <form id="search">
             <input type="text" placeholder="Search" id="search-input" onkeyup="showSuggestion(this.value)" autocomplete="off"> 
-            <button type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <!-- <button type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button> -->
         </form>
         <ul>
             <li><a href="index.php">Home</a></li>

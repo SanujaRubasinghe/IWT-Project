@@ -15,13 +15,13 @@
         foreach($a as $name) {
             if (stristr($q, substr($name, 0, $len))) {
                 if ($suggestion === "") {
-                    $suggestion = "<li>".$name."</li>";
+                    $suggestion = "<a href='$name'><li>".$name."</li></a>";
                 } else {
-                    $suggestion .= "<li>$name</li>";
+                    $suggestion .= "<a href='$name'><li>$name</li></a>";
                 }
             }
         }
     }
 
-    echo $suggestion === "" ? "no suggestion" : $suggestion;
+    echo $suggestion === "" ? "<li>Not Found</li>" : $suggestion;
 ?>

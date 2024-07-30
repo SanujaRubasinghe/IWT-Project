@@ -17,7 +17,7 @@ body {
 }
 
 .nav-bar * {
-    padding: 5px;
+    padding: 8px;
 }
 
 .nav-bar li {
@@ -42,10 +42,20 @@ body {
 #search-input {
     outline: none;
     font-size: 20px;
-    width: 95%;
+    width: 100%;
+    border: none;
+    border-radius: 100vw;
 }
 
 #search-btn {
+    padding: 0;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.fa-solid {
     padding: 0;
 }
 
@@ -53,9 +63,9 @@ body {
 #search-suggestion {
     /* border: 1px solid gray; */
     position: absolute;
-    width: 800px;
-    left: 280px;
-    top: 45px;
+    width: 45%;
+    left: 14%;
+    top: 16%;
     z-index: 1;
 }
 
@@ -68,6 +78,11 @@ body {
 
 #search-suggestion li:hover {
     background-color: antiquewhite;
+}
+
+#search-suggestion a {
+    text-decoration: none;
+    color: black;
 }
 
 
@@ -101,6 +116,10 @@ body {
 
 /* ----- Show Product Card */
 
+.product-link {
+    text-decoration: none;
+    color: black;
+}
 .product-container {
     padding: 10px;
     display: flex;
