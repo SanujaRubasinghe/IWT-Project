@@ -11,13 +11,13 @@
     <script>
         function showSuggestion(str) {
             if (str.length == 0) {
-                document.getElementById("search-suggestion").innerHTML = ""
+                document.getElementById("suggestion-list").innerHTML = ""
                 return
             } else {
                 let xhttp = new XMLHttpRequest()
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("search-suggestion").innHTML = this.responseText
+                        document.getElementById("suggestion-list").innerHTML = this.responseText
                     }
                 }
                 xhttp.open("GET", "get_hint.php?q=" + str, true)
@@ -29,7 +29,9 @@
 <body>
     <?php include 'header.php'?>
 
-    <section id="search-suggestion"></section>
+    <section id="search-suggestion">
+        <ul id="suggestion-list"></ul>
+    </section>
     
     <section class="card-container">
         <div class="card-wrapper">

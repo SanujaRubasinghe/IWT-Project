@@ -1,7 +1,8 @@
 <?php
-    $a[] = "laptop";
-    $a[] = "earbuds";
-    $a[] = "camera";
+    $a[] = "Laptop";
+    $a[] = "Lens";
+    $a[] = "Earbuds";
+    $a[] = "Camera";
 
     $q = $_REQUEST["q"];
 
@@ -14,9 +15,9 @@
         foreach($a as $name) {
             if (stristr($q, substr($name, 0, $len))) {
                 if ($suggestion === "") {
-                    $suggestion = $name;
+                    $suggestion = "<li>".$name."</li>";
                 } else {
-                    $suggestion .= ", $name";
+                    $suggestion .= "<li>$name</li>";
                 }
             }
         }
