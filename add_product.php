@@ -10,7 +10,7 @@
                 VALUES('$prod_name', $prod_price, '$image_path')";
 
         if (!mysqli_query($conn, $sql)) {
-            die("Query Failed: ".mysqli_error());
+            die("Query Failed: ".mysqli_error($conn));
         }
 
         $response['status'] = "200";

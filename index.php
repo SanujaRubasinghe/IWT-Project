@@ -7,9 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/action.js" defer></script>
     <title>Home</title>
+
+    <script>
+        function showSuggestion(str) {
+            if (str.length == 0) {
+                document.getElementById("search-suggestion").innerHTML = ""
+                return
+            } else {
+                let xhttp = new XMLHttpRequest()
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("search-suggestion").innHTML = this.responseText
+                    }
+                }
+                xhttp.open("GET", "get_hint.php?q=" + str, true)
+                xhttp.send()
+            }
+        }
+    </script>
 </head>
 <body>
     <?php include 'header.php'?>
+
+    <section id="search-suggestion"></section>
     
     <section class="card-container">
         <div class="card-wrapper">
