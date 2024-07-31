@@ -25,7 +25,7 @@
                     $product_name = $row['name'];
                     $product_price = $row['price'];
                     $path = $row['image_path'];
-        ?>  <a href="<?php echo $product_id ?>" class="product-link">
+        ?>  <a href="product_page.php?item=<?php echo $product_id ?>" class="product-link">
                 <div class="product-card">
                     <div class="image"><img src="images/<?php echo $path?>" alt="<?php echo $path?>"></div>
                     <div class="info">
