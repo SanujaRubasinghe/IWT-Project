@@ -1,5 +1,4 @@
-
-    <nav class="nav-bar">
+<nav class="nav-bar">
         <div class="logo">MyLogo</div>
         <form id="search">
             <input type="text" placeholder="Search" id="search-input" onkeyup="showSuggestion(this.value)" autocomplete="off"> 
@@ -9,7 +8,6 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="products.php">Products</a></li>
             <li><a href="#home">Contact</a></li>
-            <li><a href="#home">Cart<i class="fa-solid fa-cart-shopping"></i><sup>0</sup></a></li>
-            <li><a href="logout.php">Log Out</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
     </nav>

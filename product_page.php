@@ -10,7 +10,13 @@
     <title>Shop</title>
 </head>
 <body>
-    <?php include 'header.php' ?>
+    <!-- <?php
+        if (isset($_SESSION['loggedin'])) {
+            include 'header.php';
+        } else {
+            include 'header_not_logged.php';
+        }
+    ?> -->
 
     <section id="search-suggestion">
         <ul id="suggestion-list"></ul>

@@ -11,7 +11,23 @@
 
 </head>
 <body>
-    <?php include 'header.php'?>
+    
+    <?php
+        session_start();
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+            include 'header.php';
+        } else {
+            include 'header_not_logged.php';
+        }
+    ?>
+
+    <section>
+        <?php
+            if (isset($_SESSION['username'])) {
+                echo "<h1>Welcome, ".$_SESSION['username']."</h1>";
+            }
+        ?>
+    </section>
 
     <section id="search-suggestion">
         <ul id="suggestion-list"></ul>
