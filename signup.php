@@ -28,20 +28,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Sign Up</title>
 </head>
 <body>
-    <section><?php echo $message?></section>
-
-    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-        First Name: <input type="text" name="fname" required><br>
-        Last Name: <input type="text" name="lname" requried><br>
-        Email: <input type="email" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
-        <input type="submit" value="Sign Up">
-
-    </form>
-
-    <a href="login.php">Log In</a>
+    
+    <section id="login-signup">
+        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+            <h2>Sign Up</h2>
+            <section id="login-signup-error"><?php echo $message?></section>
+            First Name: <input type="text" name="fname" required><br>
+            Last Name: <input type="text" name="lname" requried><br>
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="password" required><br>
+            <input type="submit" value="Sign Up">
+    
+            <a href="login.php">Log In</a>
+        </form>
+    
+    </section>
 </body>
 </html>

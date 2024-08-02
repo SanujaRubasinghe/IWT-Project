@@ -23,7 +23,7 @@
                 header("Location: /shop/index.php");
                 exit;
             } else {
-                $error = "Password Incorrect.";
+                $error = "Email or Password Incorrect.";
             }
         } else {
             $error = "Email Not Found.";
@@ -38,16 +38,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>login</title>
 </head>
 <body>
-    <section><?php echo $error; ?></section>
-
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-        Email: <input type="email" name="email" id="email_input" required><br>
-        Password: <input type="password" name="password" id="password_input" required><br>
-        <a href="signup.php">Sign Up</a><br>
-        <input type="submit" value="Log In">
-    </form>
+    <section id="login-signup">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+            <h2>Log In</h2>
+            <section id="login-signup-error"><?php echo $error; ?></section>
+            Email: <input type="email" name="email" id="email_input" required><br>
+            Password: <input type="password" name="password" id="password_input" required><br>
+            <a href="signup.php">Sign Up</a><br>
+            <input type="submit" value="Log In">
+        </form>
+    </section>
 </body>
 </html>

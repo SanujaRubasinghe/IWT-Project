@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/get_suggestion.js"></script>
+    <script src="js/cart.js" defer></script>
     <title>Shop</title>
 </head>
 <body>
-    <!-- <?php
-        if (isset($_SESSION['loggedin'])) {
+    <?php
+        session_start();
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             include 'header.php';
         } else {
             include 'header_not_logged.php';
         }
-    ?> -->
+    ?>
 
     <section id="search-suggestion">
         <ul id="suggestion-list"></ul>
@@ -42,6 +44,7 @@
                 <div class='vp-info'>
                     <h3>$prod_name</h3>
                     <p>Rs.$prod_price</p>
+                    <button id='add-to-cart'>Add to Cart</button>
                 </div>
             </div>
         </section>";

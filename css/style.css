@@ -181,3 +181,34 @@ body {
     height: 100%;
     object-fit: contain;
 }
+
+/*------ Login Signup Page ------*/
+
+#login-signup {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-signup form * {
+    padding: 5px;
+    margin: 5px;
+}
+
+#login-signup form {
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.339);
+}
+
+#login-signup form a {
+    text-decoration: none;
+    float: right;
+    margin-top: 20px;
+}
+
+#login-signup-error {
+    color: red;
+}
