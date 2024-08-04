@@ -59,13 +59,39 @@ body {
     padding: 0;
 }
 
+.nav-bar .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-bar li:not(:first-child) {display: none;}
+    .nav-bar li.icon {
+        display: block;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-bar.responsive {position: relative;}
+    .nav-bar.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav-bar.responsive li {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
 /* ----- Search Suggestions ----- */
 #search-suggestion {
     /* border: 1px solid gray; */
-    position: absolute;
+    position: fixed;
     width: 45%;
     left: 14%;
-    top: 16%;
+    top: 5%;
     z-index: 1;
 }
 

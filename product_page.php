@@ -11,14 +11,7 @@
     <title>Shop</title>
 </head>
 <body>
-    <?php
-        session_start();
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-            include 'header.php';
-        } else {
-            include 'header_not_logged.php';
-        }
-    ?>
+    <?php include 'header.php';?>
 
     <section id="search-suggestion">
         <ul id="suggestion-list"></ul>
