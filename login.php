@@ -46,10 +46,14 @@
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
             <h2>Log In</h2>
             <section id="login-signup-error"><?php echo $error; ?></section>
-            Email: <input type="email" name="email" id="email_input" required><br>
-            Password: <input type="password" name="password" id="password_input" required><br>
-            <a href="signup.php">Sign Up</a><br>
-            <input type="submit" value="Log In">
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email_input" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password_input" required><br>
+            <div class="buttons">
+                <a href="signup.php">Sign Up</a><br>
+                <input type="submit" value="Log In">
+            </div>
         </form>
     </section>
 </body>

@@ -37,15 +37,19 @@
         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
             <h2>Sign Up</h2>
             <section id="login-signup-error"><?php echo $message?></section>
-            First Name: <input type="text" name="fname" required><br>
-            Last Name: <input type="text" name="lname" requried><br>
-            Email: <input type="email" name="email" required><br>
-            Password: <input type="password" name="password" required><br>
-            <input type="submit" value="Sign Up">
-    
-            <a href="login.php">Log In</a>
+            <label for="fname">First Name</label><br>
+            <input type="text" name="fname" required><br>
+            <label for="lname">Last Name</label><br>
+            <input type="text" name="lname" requried><br>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" required><br>
+            <div class="buttons">
+                <a href="login.php">Log In</a><br>
+                <input type="submit" value="Sign Up">
+            </div>
         </form>
-    
     </section>
 </body>
 </html>
