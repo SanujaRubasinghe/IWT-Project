@@ -19,7 +19,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $row['firstname'];
 
-                header("Location: /shop/index.php");
+                header("Location: /index.php");
                 exit;
             } else {
                 $error = "Email or Password Incorrect.";
