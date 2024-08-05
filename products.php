@@ -19,7 +19,7 @@
 
     <div class="product-container">
         <?php
-            $display_products = mysqli_query($conn, "select * from `products`");
+            $display_products = mysqli_query($conn, "select * from `productdata`");
             if (mysqli_num_rows($display_products) > 0) {
                 while($row = mysqli_fetch_assoc($display_products)) {
                     $product_id = $row['id'];
