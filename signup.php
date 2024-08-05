@@ -9,7 +9,7 @@
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
 
-        $sql = "INSERT INTO `users` (firstname, lastname, email, password)
+        $sql = "INSERT INTO `userdata` (firstname, lastname, email, `password`)
                 VALUES('$fname', '$lname', '$email', '$password')";
 
         if (!mysqli_query($conn, $sql)) {
