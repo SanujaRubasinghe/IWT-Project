@@ -1,5 +1,4 @@
 <?php
-
     include 'user_db_connect.php';
 
     $email = $password = $error = "";
