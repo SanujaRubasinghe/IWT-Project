@@ -34,7 +34,7 @@
 <body>
     
     <section id="login-signup">
-        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+        <form action="signup.php" method="POST">
             <h2>Sign Up</h2>
             <section id="login-signup-error"><?php echo $message?></section>
             <label for="fname">First Name</label><br>
