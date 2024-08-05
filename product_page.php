@@ -21,7 +21,7 @@
 
     $item = $_REQUEST['item'];
 
-    $sql = "SELECT * FROM `products` WHERE id=$item";
+    $sql = "SELECT * FROM `productdata` WHERE id=$item";
 
     $result = mysqli_query($conn, $sql);
     

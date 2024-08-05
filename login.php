@@ -43,7 +43,7 @@
 </head>
 <body>
     <section id="login-signup">
-        <form action="login.php" method="POST">
+        <form action="/login.php" method="POST">
             <h2>Log In</h2>
             <section id="login-signup-error"><?php echo $error; ?></section>
             <label for="email">Email</label><br>
