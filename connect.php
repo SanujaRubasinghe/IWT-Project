@@ -1,7 +1,7 @@
 <?php
     $servername = "dbshop.mysql.database.azure.com";
     $username = "sanuja";
-    $password = '$AnuJA@2003';
+    $password = 'dbshop@1234';
     $dbname = "shop";
     $tablename = "productdata";
 
