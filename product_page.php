@@ -1,4 +1,7 @@
-<?php include 'connect.php'; ?>
+<?php 
+    session_start();
+    include 'connect.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +24,7 @@
 
     $item = $_REQUEST['item'];
 
-    $sql = "SELECT * FROM `productdata` WHERE id=$item";
+    $sql = "SELECT * FROM `productdata` WHERE productid=$item";
 
     $result = mysqli_query($conn, $sql);
     
@@ -37,7 +40,7 @@
                 <div class='vp-info'>
                     <h3>$prod_name</h3>
                     <p>Rs.$prod_price</p>
-                    <button id='add-to-cart'>Add to Cart</button>
+                    <button id='add-to-cart'><a href='cart.php?product=$item'>Add to Cart</a></button>
                 </div>
             </div>
         </section>";

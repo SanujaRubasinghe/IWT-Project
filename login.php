@@ -1,5 +1,5 @@
 <?php
-    include 'user_db_connect.php';
+    include 'connect.php';
 
     $email = $password = $error = "";
 
@@ -18,8 +18,9 @@
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $row['firstname'];
+                $_SESSION['userId'] = $row['userId'];
 
-                header("Location: /index.php");
+                header("Location: /shop/index.php");
                 exit;
             } else {
                 $error = "Email or Password Incorrect.";
@@ -42,7 +43,7 @@
 </head>
 <body>
     <section id="login-signup">
-        <form action="/login.php" method="POST">
+        <form action="login.php" method="POST">
             <h2>Log In</h2>
             <section id="login-signup-error"><?php echo $error; ?></section>
             <label for="email">Email</label><br>

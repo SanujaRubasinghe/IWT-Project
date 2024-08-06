@@ -1,4 +1,7 @@
-<?php include 'connect.php';?>
+<?php 
+    session_start();
+    include 'connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +25,7 @@
             $display_products = mysqli_query($conn, "select * from `productdata`");
             if (mysqli_num_rows($display_products) > 0) {
                 while($row = mysqli_fetch_assoc($display_products)) {
-                    $product_id = $row['id'];
+                    $product_id = $row['productId'];
                     $product_name = $row['name'];
                     $product_price = $row['price'];
                     $path = $row['image_path'];

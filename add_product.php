@@ -6,7 +6,7 @@
         $prod_price = htmlspecialchars($_POST['product_price']);
         $image_path = "earbuds.jpg";
 
-        $sql = "INSERT INTO `products` (name, price, image_path)
+        $sql = "INSERT INTO `productdata` (`name`, price, image_path)
                 VALUES('$prod_name', $prod_price, '$image_path')";
 
         if (!mysqli_query($conn, $sql)) {
@@ -18,7 +18,6 @@
         echo $response['status'];
     }
 
-    echo $response['status'];
     mysqli_close($conn);
 
 ?>

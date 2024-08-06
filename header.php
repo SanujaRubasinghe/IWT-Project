@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         
         echo "<nav class='nav-bar' id='nav-bar'>

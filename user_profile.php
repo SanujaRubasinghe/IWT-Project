@@ -15,6 +15,7 @@
         <p>username: </p>
         <p>email:</p>
     </fieldset>
+    <button><a href="add_product.php">Add Product</a></button>
     <button><a href="logout.php">Log Out</a></button>
 </body>
 </html>
