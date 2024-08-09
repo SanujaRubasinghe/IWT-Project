@@ -166,7 +166,7 @@ body {
 }
 
 .product-card:hover {
-    scale: 1.1;
+    scale: 1.05;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.196);
 }

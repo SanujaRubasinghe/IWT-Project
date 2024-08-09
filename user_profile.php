@@ -26,6 +26,7 @@
         }
 
     ?>
+    <button><a href="edit_user_info.php">Edit Info</a></button>
     <button><a href="logout.php">Log Out</a></button>
 </body>
 </html>

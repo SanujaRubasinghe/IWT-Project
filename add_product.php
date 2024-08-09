@@ -18,8 +18,6 @@
             die("Query Failed: ".mysqli_error($conn));
         }
 
-        $response['status'] = "200";
-
         echo $response['status'];
     }
 

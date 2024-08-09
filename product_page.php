@@ -1,6 +1,55 @@
 <?php 
     session_start();
-    include 'connect.php'; 
+    require 'connect.php'; 
+
+    function add_to_cart() {
+        global $conn;
+        $item = $_REQUEST['item'];
+        $userid = $_SESSION['userId'];
+    
+        $add_to_cart_query = "INSERT INTO cart(productId, userId, itemCount)
+                              VALUES($item, $userid, 1)";
+
+        $select_item_query = "SELECT productID FROM cart WHERE productId=$item";
+
+        $update_item_count_query = "UPDATE cart SET itemCount=itemCount+1 WHERE productId=$item";
+        
+        if (mysqli_num_rows(mysqli_query($conn, $select_item_query)) > 0) {
+            mysqli_query($conn, $update_item_count_query);
+        } else if (!mysqli_query($conn, $add_to_cart_query)) {
+            die("Failed to add product.".mysqli_error($conn));
+        }
+        view_product();
+    }
+
+    function view_product() {
+        global $conn;
+        $item = $_REQUEST['item'];
+
+        $sql = "SELECT * FROM `productdata` WHERE productid=$item";
+    
+        $result = mysqli_query($conn, $sql);
+        
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $prod_name = $row['name'];
+            $prod_price = $row['price'];
+            $image = $row['image_path'];
+    
+            echo "<section class='view-product-container'>
+                <div class='view-product-card'>
+                    <div class='vp-image'><img src='images/$image' alt='Laptop'></div>
+                    <div class='vp-info'>
+                        <h3>$prod_name</h3>
+                        <p>Rs.$prod_price</p>
+                        <button id='add-to-cart'><a href='product_page.php?action=add&item=$item'>Add to Cart</a></button>
+                    </div>
+                </div>
+            </section>";
+        }
+    }
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,31 +71,17 @@
 
     <?php
 
-    $item = $_REQUEST['item'];
+        if (isset($_GET['action'])) {
+            $action = $_GET['action'];
 
-    $sql = "SELECT * FROM `productdata` WHERE productid=$item";
+            switch($action) {
+                case 'view': view_product(); break;
+                case 'add': add_to_cart(); break;
+                default: die("Something went wrong.".mysqli_erro($conn));
+            }
+        }
 
-    $result = mysqli_query($conn, $sql);
-    
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $prod_name = $row['name'];
-        $prod_price = $row['price'];
-        $image = $row['image_path'];
-
-        echo "<section class='view-product-container'>
-            <div class='view-product-card'>
-                <div class='vp-image'><img src='images/$image' alt='Laptop'></div>
-                <div class='vp-info'>
-                    <h3>$prod_name</h3>
-                    <p>Rs.$prod_price</p>
-                    <button id='add-to-cart'><a href='cart.php?product=$item'>Add to Cart</a></button>
-                </div>
-            </div>
-        </section>";
-    }
-
-
+        mysqli_close($conn);
     ?>
 
 </body>
