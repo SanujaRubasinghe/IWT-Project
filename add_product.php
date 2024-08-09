@@ -4,7 +4,12 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $prod_name = htmlspecialchars($_POST['product_name']);
         $prod_price = htmlspecialchars($_POST['product_price']);
-        $image_path = "earbuds.jpg";
+        $image_path = $_FILES['image']['name'];
+        $targetDir = 'images/'.$image_path;
+
+        if (!move_uploaded_file($_FILES["image"]["tmp_name"], $targetDir)) {
+            die("Image uploading failed.");
+        }
 
         $sql = "INSERT INTO `productdata` (`name`, price, image_path)
                 VALUES('$prod_name', $prod_price, '$image_path')";
@@ -56,9 +61,9 @@
                     <label for="product_price">Price:</label>
                     <input type="number" min="0" name="product_price" id="prod_price_input" required>
                     <br><br>
-                    <!-- <label for="image">Image:</label>
+                    <label for="image">Image:</label>
                     <input type="file" name="image" id="image" accept="image/png, image/jpg, image/jpeg" required>
-                    <br><br> -->
+                    <br><br>
                     <button type="submit" id="add-product-btn">Add Product</button>
                 </form>
             </div>

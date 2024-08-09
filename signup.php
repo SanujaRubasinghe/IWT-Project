@@ -1,5 +1,5 @@
 <?php
-    include 'user_db_connect.php';
+    include 'connect.php';
     
     $fname = $lname = $email = $password = $message = "";
 
@@ -8,9 +8,10 @@
         $lname = htmlspecialchars($_POST['lname']);
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
+        $defaultrole = "2";
 
-        $sql = "INSERT INTO `userdata` (firstname, lastname, email, `password`)
-                VALUES('$fname', '$lname', '$email', '$password')";
+        $sql = "INSERT INTO `userdata` (firstname, lastname, email, `password`, `role`)
+                VALUES('$fname', '$lname', '$email', '$password', '$defaultrole')";
 
         if (!mysqli_query($conn, $sql)) {
             die("Account Creation Failed.".mysqli_error($conn));

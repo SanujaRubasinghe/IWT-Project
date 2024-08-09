@@ -1,23 +1,24 @@
 <?php
+    require 'connect.php';
     session_start();
-    include 'connect.php';
 
-    $product = $_REQUEST['product'];
-
-    $add_to_cart_query = "INSERT INTO `cart` (productId, userId, itemCount) VALUES($product, ".$_SESSION['userId'].", 1)";
-    $select_cart_item_query = "SELECT productId FROM `cart` WHERE productId=$product";
-    $update_cart_item_count_query = "UPDATE `cart` SET itemCount=itemCount+1 WHERE productID=$product";
-
-    if (mysqli_query($conn, $select_cart_item_query)) {
-        mysqli_query($conn, $update_cart_item_count_query);
-    } else {
-        if (!mysqli_query($conn, $add_to_cart_query)) {
-            die("Insertion Failed".mysqli_error($conn));
+    if ($_SERVER['REQUEST_METHOD'] == "GET"){
+        $product = $_REQUEST['product'];
+    
+        $add_to_cart_query = "INSERT INTO `cart` (productId, userId, itemCount) VALUES($product, ".$_SESSION['userId'].", 1)";
+        $select_cart_item_query = "SELECT `productId` FROM `cart` WHERE productId=$product";
+        $update_cart_item_count_query = "UPDATE `cart` SET itemCount=itemCount+1 WHERE productID=$product";
+    
+        if (mysqli_query($conn, $select_cart_item_query)) {
+            mysqli_query($conn, $update_cart_item_count_query);
+        } else {
+            if (!mysqli_query($conn, $add_to_cart_query)) {
+                die("Insertion Failed".mysqli_error($conn));
+            }
         }
     }
 
     mysqli_close($conn);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

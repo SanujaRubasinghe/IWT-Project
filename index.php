@@ -17,13 +17,13 @@
     </section>
 
     <section>
+        <h1>Home Page</h1>
         <?php
             if (isset($_SESSION['username'])) {
-                echo "<h1>Welcome, ".$_SESSION['username']."</h1>";
+                echo "<h2>Welcome, ".$_SESSION['username']."</h2>";
             }
         ?>
     </section>
     <br>
-    <h1>Home Page</h1>
 </body>
 </html>

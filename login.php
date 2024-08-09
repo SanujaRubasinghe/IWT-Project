@@ -19,6 +19,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $row['firstname'];
                 $_SESSION['userId'] = $row['userId'];
+                $_SESSION['user_role'] = $row['role'];
 
                 header("Location: /shop/index.php");
                 exit;

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,16 @@
         <p>username: </p>
         <p>email:</p>
     </fieldset>
-    <button><a href="add_product.php">Add Product</a></button>
+    <?php
+        if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == '3') {
+            echo '<button><a href="add_product.php">Add Product</a></button>';
+        }
+
+        if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == '1') {
+            echo '<a href="admin-panel.php">Admin Panel</a>';
+        }
+
+    ?>
     <button><a href="logout.php">Log Out</a></button>
 </body>
 </html>
